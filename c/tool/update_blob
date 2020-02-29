@@ -1,0 +1,4 @@
+#!/bin/sh
+gcc blob2c.c -o blob2c
+./blob2c ../../built/prog-z80.bin ../echoblob.h
+
