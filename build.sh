@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 DOCKER_IMAGE=z80asm
 docker build -t $DOCKER_IMAGE .
 docker run \
@@ -8,3 +10,6 @@ docker run \
 	$DOCKER_IMAGE \
 	-i src-z80/build.z80 \
 	-o built/prog-z80.bin
+pushd c/tool
+./update_blob
+popd
